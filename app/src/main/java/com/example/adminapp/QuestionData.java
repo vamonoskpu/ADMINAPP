@@ -1,4 +1,4 @@
-package com.example.speeachap;
+package com.example.adminapp;
 
 public class QuestionData {
     String title;

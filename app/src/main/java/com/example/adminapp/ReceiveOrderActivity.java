@@ -1,4 +1,4 @@
-package com.example.speeachap;
+package com.example.adminapp;
 
 import android.Manifest;
 import android.content.Intent;

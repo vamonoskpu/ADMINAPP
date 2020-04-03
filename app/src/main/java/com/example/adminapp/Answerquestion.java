@@ -1,4 +1,4 @@
-package com.example.speeachap;
+package com.example.adminapp;
 
 import android.os.Bundle;
 import android.view.View;
