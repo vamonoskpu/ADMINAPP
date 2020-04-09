@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 
 
+
     ImageButton speeachstart;
     TextView result;
     SpeechRecognizer recognizer;
@@ -24,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button Receivebtn = findViewById(R.id.orderbtn);
         Button questionbtn = findViewById(R.id.questionbtn);
+        final Button Ordercheckbtn = findViewById(R.id.ordercheckbtn);
+        Button Menulistbtn = findViewById(R.id.menulist);
 
         Receivebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +51,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Ordercheckbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,OrdercheckActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Menulistbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MenulistActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

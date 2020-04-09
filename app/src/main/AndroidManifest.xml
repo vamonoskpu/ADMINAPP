@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.adminapp">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.adminapp.Answerquestion"></activity>
-        <activity android:name="com.example.adminapp.QuestionList"></activity>
-        <activity android:name="com.example.adminapp.ReceiveOrderActivity"></activity>
-        <activity android:name="com.example.adminapp.MainActivity">
+        <activity android:name=".MenulistActivity"></activity>
+        <activity android:name=".OrdercheckActivity" />
+        <activity android:name=".Answerquestion" />
+        <activity android:name=".QuestionList" />
+        <activity android:name=".ReceiveOrderActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
