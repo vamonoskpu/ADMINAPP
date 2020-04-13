@@ -63,7 +63,7 @@ public class QuestionList extends AppCompatActivity {
         list = new ArrayList<>();
 
         database=  FirebaseDatabase.getInstance(); // Firebase database 연동
-        reference =database.getReference("users");// DB 테이블 연결
+        reference =database.getReference("noticeboard");// DB 테이블 연결
 
         recyclerView  = findViewById(R.id.questionRecyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

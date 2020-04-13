@@ -8,8 +8,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class OrdercheckActivity extends AppCompatActivity {
 
+    FirebaseDatabase database;
+    DatabaseReference reference;
+
+    Button ordercomplete;
     Button plusbtn;
     Button minbtn;
     Button sendbtn;
@@ -24,9 +31,13 @@ public class OrdercheckActivity extends AppCompatActivity {
 
         plusbtn = (Button)findViewById(R.id.plus);
         minbtn = (Button)findViewById(R.id.min);
-        sendbtn = (Button)findViewById(R.id.send);
+
+        ordercomplete = (Button)findViewById(R.id.ordercomplete);
+
         num = (TextView)findViewById(R.id.count);
 
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("Usermenu");
 
         plusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,5 +59,14 @@ public class OrdercheckActivity extends AppCompatActivity {
                 num.setText(""+count);
             }
         });
+
+        ordercomplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reference.child("usercount").setValue(count+"");
+
+            }
+        });
+
     }
 }

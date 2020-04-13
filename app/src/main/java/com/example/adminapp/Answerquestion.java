@@ -37,7 +37,7 @@ public class Answerquestion extends AppCompatActivity {
 
 
         answerbtn=(Button)findViewById(R.id.answerbtn);
-        confirmbtn=(Button)findViewById(R.id.confirmbtn);
+
         title = (TextView) findViewById(R.id.title1);
         writer = (TextView) findViewById(R.id.writer);
         answercontents = (EditText) findViewById(R.id.answercontents);
@@ -45,7 +45,7 @@ public class Answerquestion extends AppCompatActivity {
 
 
         database=  FirebaseDatabase.getInstance(); // Firebase database 연동
-        reference =database.getReference("users");// DB 테이블 연결
+        reference =database.getReference("noticeboard");// DB 테이블 연결
 
         Bundle extras = getIntent().getExtras(); //QuestionList에서 받아온 정보를 가져옴
         if(extras != null){
@@ -78,12 +78,6 @@ public class Answerquestion extends AppCompatActivity {
             }
         });
 
-        confirmbtn.setOnClickListener(new View.OnClickListener() { //확인버튼 클릭 시
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
 
 
