@@ -64,6 +64,7 @@ public class OrdercheckActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 reference.child("usercount").setValue(count+"");
+                reference.child("ordercheck").setValue("준비 완료");
 
             }
         });
