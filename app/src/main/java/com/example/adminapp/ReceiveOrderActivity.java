@@ -8,15 +8,22 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -27,9 +34,16 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     ImageButton speeachstart;
 
 
+    Button ordercomplete;
+    Button plusbtn;
+    TextView num;
+    int count=0;
+    Button minbtn;
+
     DatabaseReference databaseReference;
     SpeechRecognizer recognizer;
     Intent intent;
+    ImageView payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +54,14 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
+        plusbtn = (Button)findViewById(R.id.plus);
+        minbtn = (Button)findViewById(R.id.min);
+        payment = findViewById(R.id.payment);
+
+
+        ordercomplete = (Button)findViewById(R.id.complete);
+
+        num = (TextView)findViewById(R.id.count);
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
@@ -52,6 +74,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, this.getPackageName());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ko-KR");
         recognizer = SpeechRecognizer.createSpeechRecognizer(this);
+
 
         recognizer.setRecognitionListener(new RecognitionListener() {
             @Override
@@ -123,6 +146,59 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 recognizer.startListening(intent);
             }
         });
+
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
+
+                if(payment1 ==2131165295){
+                    payment.setImageResource(R.drawable.card);
+                    payment.setVisibility(View.VISIBLE);
+                }else if(payment1 ==2131165355){
+                    payment.setImageResource(R.drawable.money);
+                    payment.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        plusbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num.setText(""+count);
+                count++;
+            }
+        });
+
+        minbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count--;
+                if(count<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count = 0;
+                }
+
+                num.setText(""+count);
+            }
+        });
+
+        ordercomplete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              finish();
+            }
+        });
+
+
 
 
 

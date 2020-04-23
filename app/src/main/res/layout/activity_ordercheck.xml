@@ -13,12 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        android:text="주문받기"></TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:text="this is for users and others"></TextView>
+        android:text="주문확인"></TextView>
+
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,29 +8,97 @@
     android:orientation="vertical">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="84dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/SpeeachStart"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0" />
-
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:textSize="30dp"
+        android:text="주문받기"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="this is for users and others"></TextView>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_height="wrap_content"
+        android:text="메뉴선택"></TextView>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:text="사용자의 발음 교정된 text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examtext" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+
+                android:src="@drawable/americano"></ImageView>
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/plus"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+
+                android:background="@drawable/button_design2"
+                android:text="+"
+                tools:layout_editor_absoluteX="82dp"
+                tools:layout_editor_absoluteY="170dp" />
+            <TextView
+
+                android:id="@+id/count"
+                android:layout_width="24dp"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:background="@drawable/button_design2"
+                android:text="0"
+                android:textSize="30sp"
+                 />
+
+            <Button
+                android:id="@+id/min"
+                android:layout_width="24dp"
+                android:layout_height="37dp"
+
+                android:background="@drawable/button_design2"
+                android:text="-"
+                tools:layout_editor_absoluteX="83dp"
+                tools:layout_editor_absoluteY="216dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/examtext"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:text="관리자용 STT"
+
+        android:textSize="24sp" />
 
     <ImageButton
         android:id="@+id/SpeeachStart"
@@ -40,13 +108,41 @@
         android:layout_marginBottom="51dp"
         android:background="@drawable/button_image"
         android:src="@drawable/ic_mic_none_black_24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/examtext"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+
+        >
 
     </ImageButton>
+
+</LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="사용자의 발음 교정된 text"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="결제수단"
+        android:textSize="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"></TextView>
+
+    <ImageView
+
+        android:id="@+id/payment"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+
+        android:layout_marginTop="20dp"
+        android:src="@drawable/money"/>
+
+
 
     <Button
         android:id="@+id/complete"
@@ -54,41 +150,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginTop="64dp"
-        android:text="주문 완료"
+        android:text="상품 준비 완료"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"></Button>
 
-    <TextView
-        android:id="@+id/examtext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="420dp"
-        android:text="관리자용 STT"
-        android:textAlignment="textStart"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SpeeachStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="48dp"
-        android:text="메뉴 주문"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/examtext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

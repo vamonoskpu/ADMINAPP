@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#FCD26F</color>
+    <color name="colorPrimaryDark">#FCD26F</color>
+    <color name="colorLightGray">#f1f1f1</color>
+
+    <color name="colorAccent">#FF9800</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorDivision">#e0e0e0</color>
+    <color name="colorNavIcon">#1d1d1d</color>
+
+    <color name="colorGoogleSignIn">#FF9800</color>
+    <color name="colorGoogleSignInPressed">#FCD26F</color>
+    <color name="colorEmailSignIn">#FF9800</color>
+    <color name="colorEmailSignInPressed">#FF9800</color>
 </resources>
