@@ -170,7 +170,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
             }
         });
 
-        plusbtn.setOnClickListener(new View.OnClickListener() {
+       /* plusbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 num.setText(""+count);
@@ -190,7 +190,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 num.setText(""+count);
             }
         });
-
+*/
         ordercomplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
