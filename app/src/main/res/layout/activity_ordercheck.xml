@@ -3,64 +3,236 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
     tools:context="com.example.adminapp.OrdercheckActivity">
 
     <TextView
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:text="주문확인"></TextView>
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="30dp"
+        android:text="주문확인"
+        android:textSize="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
+
         <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="67dp"
+
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="아메리카노">
+            android:text="아메리카노"
+            android:textSize="20dp">
 
         </TextView>
 
         <TextView
+            android:id="@+id/americano"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="0">
 
         </TextView>
 
 
-</LinearLayout>
-
-
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
-        <TextView
-            android:layout_weight="1"
 
+        <TextView
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:textSize="20dp"
-            android:text ="카페라떼">
+            android:text="카페라떼"
+            android:textSize="20dp">
 
         </TextView>
 
         <TextView
+            android:id="@+id/cafelatte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:text="0">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="카페모카"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/cafemocha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="72dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="카라멜마끼야또"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/caramelmacchiato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="에스프레소"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/espresso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="59dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="프라푸치노"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/frappuccino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="핫초코"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/hotchocolate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="0">
 
         </TextView>
@@ -69,17 +241,45 @@
     </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="53dp"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="플레인요거트스무디"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/smoothie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0">
+
+        </TextView>
 
 
-
+    </LinearLayout>
 
 
     <Button
-        android:layout_marginTop="30dp"
+        android:id="@+id/ordercomplete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="준비 완료"
-        android:id="@+id/ordercomplete">
+        android:layout_marginTop="30dp"
+        android:text="준비 완료">
 
     </Button>
 
