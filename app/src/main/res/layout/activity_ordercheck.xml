@@ -15,56 +15,62 @@
         android:textSize="30dp"
         android:text="주문확인"></TextView>
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_height="wrap_content"
-        android:text="메뉴선택"></TextView>
     <LinearLayout
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="아메리카노">
 
-        <LinearLayout
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0">
+
+        </TextView>
+
+
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_weight="1"
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:layout_marginLeft="30dp"
-                android:id="@+id/plus"
-                android:layout_width="37dp"
-                android:layout_height="37dp"
-                android:text="+"
-                tools:layout_editor_absoluteX="82dp"
-                tools:layout_editor_absoluteY="170dp" />
-            <TextView
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text ="카페라떼">
 
-                android:id="@+id/count"
-                android:layout_marginLeft="35dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="30sp"
-                tools:layout_editor_absoluteX="45dp"
-                tools:layout_editor_absoluteY="182dp" />
-            <Button
-                android:layout_marginLeft="30dp"
-                android:id="@+id/min"
-                android:layout_width="36dp"
-                android:layout_height="35dp"
-                android:text="-"
-                tools:layout_editor_absoluteX="83dp"
-                tools:layout_editor_absoluteY="216dp" />
+        </TextView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0">
 
+        </TextView>
 
-
-        </LinearLayout>
 
     </LinearLayout>
+
+
+
+
 
 
 

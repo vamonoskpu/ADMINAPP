@@ -29,12 +29,9 @@ public class OrdercheckActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordercheck);
 
-        plusbtn = (Button)findViewById(R.id.plus);
-        minbtn = (Button)findViewById(R.id.min);
 
         ordercomplete = (Button)findViewById(R.id.ordercomplete);
 
-        num = (TextView)findViewById(R.id.count);
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Usermenu");

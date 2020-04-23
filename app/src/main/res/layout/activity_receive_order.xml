@@ -464,7 +464,7 @@
     <TextView
         android:id="@+id/examtext"
         android:layout_width="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
 
@@ -474,7 +474,7 @@
 
     <ImageButton
         android:id="@+id/SpeeachStart"
-        android:layout_width="21dp"
+        android:layout_width="30dp"
         android:layout_height="30dp"
 
         android:background="@drawable/button_image"

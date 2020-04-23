@@ -75,6 +75,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     Button minbtn;
 
     DatabaseReference databaseReference;
+
     SpeechRecognizer recognizer;
     Intent intent;
     ImageView payment;
@@ -113,7 +114,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
        // plusbtn = (Button)findViewById(R.id.plus);
-        minbtn = (Button)findViewById(R.id.min);
+        reference =database.getReference();
         payment = findViewById(R.id.payment);
 
                Integer[] btnIDs = { R.id.plus0,R.id.plus1,R.id.plus2,R.id.plus3,R.id.plus4,R.id.plus4,R.id.plus5,R.id.plus6,R.id.plus7};
@@ -121,8 +122,6 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
 
         ordercomplete = (Button)findViewById(R.id.complete);
-
-        num = (TextView)findViewById(R.id.count);
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
@@ -390,7 +389,26 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         ordercomplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              finish();
+                if(count0 >0){
+
+                    reference.child("Menucount").child("americano").setValue(count0-1);
+                }if(count1>0){
+                    reference.child("Menucount").child("cafelatte").setValue(count1-1);
+                } if(count2>0){
+                    reference.child("Menucount").child("cafemocha").setValue(count2-1);
+                } if(count3>0){
+                    reference.child("Menucount").child("caramelmacchiato").setValue(count3-1);
+                } if(count4>0){
+                    reference.child("Menucount").child("espresso").setValue(count4-1);
+                } if(count5>0){
+                    reference.child("Menucount").child("frappuccino").setValue(count5-1);
+                } if(count6>0){
+                reference.child("Menucount").child("hotchocolate").setValue(count6-1);
+            }if(count7>0){
+                    reference.child("Menucount").child("smoothie").setValue(count7-1);
+                }
+
+
             }
         });
 
