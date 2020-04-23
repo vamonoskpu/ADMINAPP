@@ -35,9 +35,43 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
 
     Button ordercomplete;
-    Button plusbtn;
+    Button plusbtn0;
+    Button plusbtn1;
+    Button plusbtn2;
+    Button plusbtn3;
+    Button plusbtn4;
+    Button plusbtn5;
+    Button plusbtn6;
+    Button plusbtn7;
+    Button minbtn0;
+    Button minbtn1;
+    Button minbtn2;
+    Button minbtn3;
+    Button minbtn4;
+    Button minbtn5;
+    Button minbtn6;
+    Button minbtn7;
+    TextView num0;
+    TextView num1;
+    TextView num2;
+    TextView num3;
+    TextView num4;
+    TextView num5;
+    TextView num6;
+    TextView num7;
+
+
+
     TextView num;
-    int count=0;
+    int count0=0;
+    int count1=0;
+    int count2=0;
+    int count3=0;
+    int count4=0;
+    int count5=0;
+    int count6=0;
+    int count7=0;
+
     Button minbtn;
 
     DatabaseReference databaseReference;
@@ -51,12 +85,39 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_receive_order);
 
         speeachstart= findViewById(R.id.SpeeachStart);
+        plusbtn0 = findViewById(R.id.plus0);
+        plusbtn1 = findViewById(R.id.plus1);
+        plusbtn2 = findViewById(R.id.plus2);
+        plusbtn3 = findViewById(R.id.plus3);
+        plusbtn4 = findViewById(R.id.plus4);
+        plusbtn5 = findViewById(R.id.plus5);
+        plusbtn6 = findViewById(R.id.plus6);
+        plusbtn7= findViewById(R.id.plus7);
+        minbtn0 = findViewById(R.id.min0);
+        minbtn1= findViewById(R.id.min1);
+        minbtn2 =findViewById(R.id.min2);
+        minbtn3 = findViewById(R.id.min3);
+        minbtn4 = findViewById(R.id.min4);
+        minbtn5  = findViewById(R.id.min5);
+        minbtn6 = findViewById(R.id.min6);
+        minbtn7 = findViewById(R.id.min7);
+        num0= findViewById(R.id.count0);
+        num1 = findViewById(R.id.count1);
+        num2 = findViewById(R.id.count2);
+        num3 = findViewById(R.id.count3);
+        num4 = findViewById(R.id.count4);
+        num5 =findViewById(R.id.count5);
+        num6 = findViewById(R.id.count6);
+        num7 = findViewById(R.id.count7);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
-        plusbtn = (Button)findViewById(R.id.plus);
+       // plusbtn = (Button)findViewById(R.id.plus);
         minbtn = (Button)findViewById(R.id.min);
         payment = findViewById(R.id.payment);
+
+               Integer[] btnIDs = { R.id.plus0,R.id.plus1,R.id.plus2,R.id.plus3,R.id.plus4,R.id.plus4,R.id.plus5,R.id.plus6,R.id.plus7};
+
 
 
         ordercomplete = (Button)findViewById(R.id.complete);
@@ -170,27 +231,162 @@ public class ReceiveOrderActivity extends AppCompatActivity {
             }
         });
 
-       /* plusbtn.setOnClickListener(new View.OnClickListener() {
+       plusbtn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num.setText(""+count);
-                count++;
+                num0.setText(""+count0);
+                count0++;
             }
         });
 
-        minbtn.setOnClickListener(new View.OnClickListener() {
+        minbtn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count--;
-                if(count<0){
+                count0--;
+                if(count0<0){
                     Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
-                    count = 0;
+                    count0 = 0;
                 }
 
-                num.setText(""+count);
+                num0.setText(""+count0);
             }
         });
-*/
+
+        plusbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num1.setText(""+count1);
+                count1++;
+            }
+        });
+        minbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count1--;
+                if(count1<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count1 = 0;
+                }
+
+                num1.setText(""+count1);
+            }
+        });
+
+        plusbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num2.setText(""+count2);
+                count2++;
+            }
+        });
+        minbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count2--;
+                if(count2<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count2 = 0;
+                }
+
+                num2.setText(""+count2);
+            }
+        });
+        plusbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num3.setText(""+count3);
+                count3++;
+            }
+        });
+        minbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count3--;
+                if(count3<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count3 = 0;
+                }
+
+                num3.setText(""+count3);
+            }
+        });
+        plusbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num4.setText(""+count4);
+                count4++;
+            }
+        });
+        minbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count4--;
+                if(count4<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count4 = 0;
+                }
+
+                num4.setText(""+count4);
+            }
+        });
+        plusbtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num5.setText(""+count5);
+                count5++;
+            }
+        });
+        minbtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count5--;
+                if(count5<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count5 = 0;
+                }
+
+                num5.setText(""+count5);
+            }
+        });
+        plusbtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num6.setText(""+count6);
+                count6++;
+            }
+        });
+        minbtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count6--;
+                if(count6<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count6 = 0;
+                }
+
+                num6.setText(""+count6);
+            }
+        });
+        plusbtn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                num7.setText(""+count7);
+                count7++;
+            }
+        });
+        minbtn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count7--;
+                if(count7<0){
+                    Toast.makeText(getApplicationContext(),"못해",Toast.LENGTH_SHORT).show();
+                    count7 = 0;
+                }
+
+                num7.setText(""+count7);
+            }
+        });
+
         ordercomplete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
