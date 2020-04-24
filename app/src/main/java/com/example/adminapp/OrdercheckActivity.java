@@ -104,6 +104,23 @@ public class OrdercheckActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 reference1.child("ordercheck").setValue("준비 완료");
+                reference.child("cafelatte").setValue(0);
+                reference.child("americano").setValue(0);
+                reference.child("cafemocha").setValue(0);
+                reference.child("caramelmacchiato").setValue(0);
+                reference.child("espresso").setValue(0);
+                reference.child("frappuccino").setValue(0);
+                reference.child("hotchocolate").setValue(0);
+                reference.child("smoothie").setValue(0);
+
+
+
+
+
+
+
+
+
 
             }
         });
