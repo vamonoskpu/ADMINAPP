@@ -474,8 +474,8 @@
 
     <ImageButton
         android:id="@+id/SpeeachStart"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="182dp"
+        android:layout_height="67dp"
 
         android:background="@drawable/button_image"
         android:src="@drawable/ic_mic_none_black_24dp"
