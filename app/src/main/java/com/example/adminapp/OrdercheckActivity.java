@@ -19,6 +19,7 @@ public class OrdercheckActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     DatabaseReference reference1;
+    DatabaseReference reference2;
     TextView text1;
     TextView text2;
     TextView text3;
@@ -51,6 +52,7 @@ public class OrdercheckActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Menucount");
+         reference2 = database.getReference();
         reference1 = database.getReference("Usermenu");
 
 
@@ -103,7 +105,7 @@ public class OrdercheckActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                reference1.child("ordercheck").setValue("준비 완료");
+                reference2.child("ordercheck").setValue("준비 완료");
                 reference.child("cafelatte").setValue(0);
                 reference.child("americano").setValue(0);
                 reference.child("cafemocha").setValue(0);
