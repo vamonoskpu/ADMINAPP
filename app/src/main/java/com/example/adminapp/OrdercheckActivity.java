@@ -19,6 +19,7 @@ public class OrdercheckActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     DatabaseReference reference1;
+    DatabaseReference reference2;
     TextView text1;
     TextView text2;
     TextView text3;
@@ -36,9 +37,6 @@ public class OrdercheckActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ordercheck);
-
-        Button ordercomplete = findViewById(R.id.ordercomplete);
-
         final TextView text1 = findViewById(R.id.americano);
         final TextView text2 = findViewById(R.id.cafelatte);
         final TextView text3 = findViewById(R.id.cafemocha);
@@ -47,12 +45,15 @@ public class OrdercheckActivity extends AppCompatActivity {
         final TextView text6 = findViewById(R.id.frappuccino);
         final TextView text7 = findViewById(R.id.hotchocolate);
         final TextView text8 = findViewById(R.id.smoothie);
+        Button ordercomplete = findViewById(R.id.ordercomplete);
+
+
 
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Menucount");
         reference1 = database.getReference("Usermenu");
-
+        reference2 = database.getReference();
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -103,7 +104,7 @@ public class OrdercheckActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                reference1.child("ordercheck").setValue("준비 완료");
+                reference2.child("ordercheck").setValue("준비 완료");
                 reference.child("cafelatte").setValue(0);
                 reference.child("americano").setValue(0);
                 reference.child("cafemocha").setValue(0);
