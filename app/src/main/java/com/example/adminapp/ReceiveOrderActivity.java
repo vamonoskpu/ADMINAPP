@@ -32,6 +32,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ImageButton speeachstart;
+    TextView tv;
 
 
     Button ordercomplete;
@@ -110,6 +111,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         num5 =findViewById(R.id.count5);
         num6 = findViewById(R.id.count6);
         num7 = findViewById(R.id.count7);
+        tv = findViewById(R.id.examtext);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
@@ -185,7 +187,9 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 // recognizer.destroy();
 
                 //TextDB textdb= new TextDB(" "+rs[0]);
-                databaseReference.setValue(menuData); //Firebase에 데이터 넣기
+                databaseReference.setValue(menuData);
+                tv.setText(rs[0]);
+                //Firebase에 데이터 넣기
 
             }
 
@@ -209,10 +213,10 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
 
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+       databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
+           /*     int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
 
                 if(payment1 ==2131165295){
                     payment.setImageResource(R.drawable.card);
@@ -221,8 +225,12 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                     payment.setImageResource(R.drawable.money);
                     payment.setVisibility(View.VISIBLE);
                 }
+                */
+
 
             }
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
