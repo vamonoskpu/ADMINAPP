@@ -145,7 +145,6 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 //사용자가 말하기 시작할 때 호출
                 Toast.makeText(getApplicationContext(),"음성인식을 시작합니다",Toast.LENGTH_SHORT).show();
                 speeachstart.setImageResource(R.drawable.ic_mic_black_24dp);
-                databaseReference.getDatabase().getReference().removeValue();
             }
 
             @Override
