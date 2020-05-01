@@ -75,6 +75,8 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     Button minbtn;
 
     DatabaseReference databaseReference;
+    DatabaseReference databaseReference2;
+
 
     SpeechRecognizer recognizer;
     Intent intent;
@@ -113,6 +115,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
+        databaseReference2 =database.getReference();
        // plusbtn = (Button)findViewById(R.id.plus);
         reference =database.getReference();
         payment = findViewById(R.id.payment);
@@ -209,15 +212,15 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
 
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
 
-                if(payment1 ==2131165295){
+                if(payment1 ==2131165291){
                     payment.setImageResource(R.drawable.card);
                     payment.setVisibility(View.VISIBLE);
-                }else if(payment1 ==2131165355){
+                }else if(payment1 ==2131165347){
                     payment.setImageResource(R.drawable.money);
                     payment.setVisibility(View.VISIBLE);
                 }

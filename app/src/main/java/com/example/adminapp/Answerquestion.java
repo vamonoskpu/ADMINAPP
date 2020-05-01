@@ -6,11 +6,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,13 +34,15 @@ public class Answerquestion extends AppCompatActivity {
     Button answerbtn; //답변하기버튼
     Button confirmbtn ; //확인버튼
     String existinganswercontents; //답변내용
+    TextView dateTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answerquestion);
 
-
+        database=  FirebaseDatabase.getInstance(); // Firebase database 연동
+        reference =database.getReference().child("noticeboard");// DB 테이블 연결
 
         answerbtn=(Button)findViewById(R.id.answerbtn);
 
@@ -42,10 +50,25 @@ public class Answerquestion extends AppCompatActivity {
         writer = (TextView) findViewById(R.id.writer);
         answercontents = (EditText) findViewById(R.id.answercontents);
         contents = (TextView) findViewById(R.id.contents);
+        dateTv =(TextView) findViewById(R.id.date);
 
 
-        database=  FirebaseDatabase.getInstance(); // Firebase database 연동
-        reference =database.getReference("noticeboard");// DB 테이블 연결
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String date = dataSnapshot.child(existingwriter).child("date").getValue(String.class);
+                dateTv.setText(date);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
 
         Bundle extras = getIntent().getExtras(); //QuestionList에서 받아온 정보를 가져옴
         if(extras != null){
