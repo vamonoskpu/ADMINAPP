@@ -217,10 +217,10 @@ public class ReceiveOrderActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
 
-                if(payment1 ==2131165295){
+                if(payment1 ==2131165291){
                     payment.setImageResource(R.drawable.card);
                     payment.setVisibility(View.VISIBLE);
-                }else if(payment1 ==2131165355){
+                }else if(payment1 ==2131165347){
                     payment.setImageResource(R.drawable.money);
                     payment.setVisibility(View.VISIBLE);
                 }
