@@ -32,7 +32,6 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference reference;
     ImageButton speeachstart;
-    TextView tv;
 
 
     Button ordercomplete;
@@ -60,6 +59,7 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     TextView num5;
     TextView num6;
     TextView num7;
+    TextView admin;
 
 
 
@@ -76,6 +76,8 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     Button minbtn;
 
     DatabaseReference databaseReference;
+    DatabaseReference databaseReference2;
+
 
     SpeechRecognizer recognizer;
     Intent intent;
@@ -111,10 +113,11 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         num5 =findViewById(R.id.count5);
         num6 = findViewById(R.id.count6);
         num7 = findViewById(R.id.count7);
-        tv = findViewById(R.id.examtext);
+        admin = findViewById(R.id.examtext);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
+        databaseReference2 =database.getReference();
        // plusbtn = (Button)findViewById(R.id.plus);
         reference =database.getReference();
         payment = findViewById(R.id.payment);
@@ -144,7 +147,6 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 //사용자가 말하기 시작할 때 호출
                 Toast.makeText(getApplicationContext(),"음성인식을 시작합니다",Toast.LENGTH_SHORT).show();
                 speeachstart.setImageResource(R.drawable.ic_mic_black_24dp);
-
             }
 
             @Override
@@ -186,10 +188,9 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 MenuData menuData = new MenuData(rs[0]);
                 // recognizer.destroy();
 
-                //TextDB textdb= new TextDB(" "+rs[0]);
-                databaseReference.setValue(menuData);
-                tv.setText(rs[0]);
-                //Firebase에 데이터 넣기
+                TextDB textdb= new TextDB(" "+rs[0]);
+                admin.setText(" "+rs[0]);
+                databaseReference.setValue(menuData); //Firebase에 데이터 넣기
 
             }
 
@@ -213,24 +214,20 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
 
 
-       databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-           /*     int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
+                int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
 
-                if(payment1 ==2131165295){
+                if(payment1 ==2131165291){
                     payment.setImageResource(R.drawable.card);
                     payment.setVisibility(View.VISIBLE);
-                }else if(payment1 ==2131165355){
+                }else if(payment1 ==2131165347){
                     payment.setImageResource(R.drawable.money);
                     payment.setVisibility(View.VISIBLE);
                 }
-                */
-
 
             }
-
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
