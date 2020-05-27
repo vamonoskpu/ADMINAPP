@@ -491,6 +491,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
         android:text="사용자의 발음 교정된 text"
         android:textSize="24sp"
