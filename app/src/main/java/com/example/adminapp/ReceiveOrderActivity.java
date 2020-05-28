@@ -489,6 +489,10 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 }if(count9>0){
                     reference.child("Menucount").child("vanillaflatwhite").setValue(count9-1);
                 }
+                Toast.makeText(getApplicationContext(),"주문확인으로 넘어갑니다.",Toast.LENGTH_SHORT).show();
+                
+                Intent intent = new  Intent(ReceiveOrderActivity.this,OrdercheckActivity.class);
+                startActivity(intent);
             }
         });
     }
