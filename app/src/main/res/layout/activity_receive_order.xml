@@ -285,7 +285,7 @@
                         android:background="@drawable/button_design2"
                         android:gravity="center"
                         android:text="0"
-                        android:textSize="30sp" />
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/min4"
@@ -338,7 +338,7 @@
                         android:background="@drawable/button_design2"
                         android:gravity="center"
                         android:text="0"
-                        android:textSize="30sp" />
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/min5"
@@ -391,7 +391,7 @@
                         android:background="@drawable/button_design2"
                         android:gravity="center"
                         android:text="0"
-                        android:textSize="30sp" />
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/min6"
@@ -444,10 +444,117 @@
                         android:background="@drawable/button_design2"
                         android:gravity="center"
                         android:text="0"
-                        android:textSize="30sp" />
+                        android:textSize="20sp" />
 
                     <Button
                         android:id="@+id/min7"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+
+                        android:background="@drawable/button_design2"
+                        android:text="-"
+                        tools:layout_editor_absoluteX="83dp"
+                        tools:layout_editor_absoluteY="216dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/hotchocolate"></ImageView>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/plus8"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:background="@drawable/button_design2"
+                        android:text="+"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="170dp" />
+
+                    <TextView
+
+                        android:id="@+id/count8"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/button_design2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/min8"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+
+                        android:background="@drawable/button_design2"
+                        android:text="-"
+                        tools:layout_editor_absoluteX="83dp"
+                        tools:layout_editor_absoluteY="216dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/hotchocolate"></ImageView>
+
+                <LinearLayout
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/plus9"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+
+                        android:background="@drawable/button_design2"
+                        android:text="+"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="170dp" />
+
+                    <TextView
+
+                        android:id="@+id/count9"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="@drawable/button_design2"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/min9"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
 
