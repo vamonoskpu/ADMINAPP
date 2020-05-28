@@ -15,3 +15,17 @@ public class MenuData {
         return usermenu;
     }
 }
+class MenuData2{
+    public String result;
+    public MenuData2(){
+    }
+    public MenuData2(String usermenu){
+        this.result=usermenu;
+    }
+    public void setUsermenu(String usermenu) {
+        this.result = usermenu;
+    }
+    public String getUsermenu(){
+        return result;
+    }
+}

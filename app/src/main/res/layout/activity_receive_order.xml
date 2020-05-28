@@ -468,7 +468,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="vertical">
     <TextView
         android:id="@+id/examtext"
         android:layout_width="wrap_content"
@@ -482,8 +482,9 @@
 
     <ImageButton
         android:id="@+id/SpeeachStart"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="182dp"
+        android:layout_height="67dp"
+        android:layout_gravity="center"
 
         android:background="@drawable/button_image"
         android:src="@drawable/ic_mic_none_black_24dp"
@@ -498,6 +499,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
         android:text="사용자의 발음 교정된 text"
         android:textSize="24sp"

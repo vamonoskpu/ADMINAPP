@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,12 +27,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ReceiveOrderActivity extends AppCompatActivity {
-
+    String uid;
     FirebaseDatabase database;
-    DatabaseReference reference;
+    DatabaseReference reference, userText_ref;
     ImageButton speeachstart;
+
 
 
     Button ordercomplete;
@@ -59,6 +62,8 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     TextView num5;
     TextView num6;
     TextView num7;
+    TextView admin;
+    TextView textView;
 
 
 
@@ -86,7 +91,6 @@ public class ReceiveOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_order);
-
         speeachstart= findViewById(R.id.SpeeachStart);
         plusbtn0 = findViewById(R.id.plus0);
         plusbtn1 = findViewById(R.id.plus1);
@@ -112,12 +116,28 @@ public class ReceiveOrderActivity extends AppCompatActivity {
         num5 =findViewById(R.id.count5);
         num6 = findViewById(R.id.count6);
         num7 = findViewById(R.id.count7);
+        admin = findViewById(R.id.examtext);
+        textView = findViewById(R.id.textView4);
 
         database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("Usermenu");
         databaseReference2 =database.getReference();
+        userText_ref= database.getReference("8VZm145EEvgpOKfyjWzghGP4zji2");
        // plusbtn = (Button)findViewById(R.id.plus);
         reference =database.getReference();
+        userText_ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                MenuData2 menuData2 = dataSnapshot.getValue(MenuData2.class);
+                textView.setText(menuData2.getUsermenu());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         payment = findViewById(R.id.payment);
 
                Integer[] btnIDs = { R.id.plus0,R.id.plus1,R.id.plus2,R.id.plus3,R.id.plus4,R.id.plus4,R.id.plus5,R.id.plus6,R.id.plus7};
@@ -149,7 +169,6 @@ public class ReceiveOrderActivity extends AppCompatActivity {
 
             @Override
             public void onBeginningOfSpeech() {
-
 
             }
 
@@ -186,7 +205,8 @@ public class ReceiveOrderActivity extends AppCompatActivity {
                 MenuData menuData = new MenuData(rs[0]);
                 // recognizer.destroy();
 
-                //TextDB textdb= new TextDB(" "+rs[0]);
+                TextDB textdb= new TextDB(" "+rs[0]);
+                admin.setText(" "+rs[0]);
                 databaseReference.setValue(menuData); //Firebase에 데이터 넣기
 
             }
@@ -409,15 +429,8 @@ public class ReceiveOrderActivity extends AppCompatActivity {
             }if(count7>0){
                     reference.child("Menucount").child("smoothie").setValue(count7-1);
                 }
-
-
             }
         });
-
-
-
-
-
-
     }
+
 }
